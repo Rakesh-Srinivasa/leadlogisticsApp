@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<style>
+
+.text {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+
+}
+</style>
+<div class="container">
+  <br>
+  <h4>Enter Tracking/Docket No of the Shipment</h4>
+  <form method="GET" action="{% url 'leadlogisticsApp:detail' %}">
+  	{% csrf_token %}
+    <input type="text" name="Docket" value="" required class="text">
+    <br>
+    <p></p>
+    <input type="Submit" class="btn btn-warning" value="Submit">
+
+  </form>
+</div>
+{% endblock %}

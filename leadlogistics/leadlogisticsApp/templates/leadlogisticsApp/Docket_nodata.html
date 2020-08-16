@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+  .nodata {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    text-align: center;
+
+    border-radius: 4px;
+
+  }
+
+</style>
+<div class="container">
+
+
+<br>
+<div class="alert alert-danger nodata"  role="alert">
+<h1>No Data Found for this docket</h1>
+</div>
+</div>
+
+<!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong><h1>No Data Found for this docket</h1></strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div> -->
+
+{% endblock %}

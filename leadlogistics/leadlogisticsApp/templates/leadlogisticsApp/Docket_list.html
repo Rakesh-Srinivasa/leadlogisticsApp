@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- This basically creates the 12 grid layout -->
+
+	<div class="content">
+
+	
+    <br>
+    {% for docket in object_list %}
+			<h3 class="mb-1">Docket Id:{{ docket.DocketId }}</h3>
+			<h5 class="mb-1">Status: {{ docket.DocketStatus}}</h5>
+      <br>
+    {% endfor %}
+
+    </div>
+
+{% endblock %}
+
+<!-- {% block group_content %}
+<div class="col-md-8">
+	<div class="list-group">
+		{% for group in object_list %}
+		<a href="{% url 'groups:single' slug=group.slug %}"
+		class="list-group-item list-group-item-action flex-column align-items-start">
+			<h3 class="mb-1">{{ group.name }}</h3>
+			<p class="mb-1">{{ group.description_html|safe }}</p>
+			<div class="d-flex w-40 justify-content-between">
+				<small class="text-muted"><span class="badge badge-secondary">
+					{{ group.members.count }}</span> member{{ group.members.count|pluralize }}</small>
+				<small class="text-muted"><span class="badge badge-secondary">
+					{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}</small>
+			<span></span><span></span>
+			</div>
+		</a>
+
+		{% endfor %}
+	</div>
+</div>
+{% endblock %} -->

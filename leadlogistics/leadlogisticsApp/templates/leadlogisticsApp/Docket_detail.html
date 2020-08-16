@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <!-- This basically creates the 12 grid layout -->
+ <style>
+   .data {
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     text-align: center;
+
+     border-radius: 4px;
+
+   }
+
+
+	 .sample {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+	animation-name: example;
+	animation-duration: 4s;
+	border-radius: 25px;
+	opacity: 50%;
+
+
+
+
+
+}
+
+p {
+
+ text-align: center;
+ word-spacing: 175px;
+ position: fixed;
+}
+
+.alert{
+	text-align:justify;
+  text-justify:auto;
+}
+
+
+
+@keyframes example {
+	0%   {background-color:red; left:0px; top:0px;object-position: 0% 0%;}
+	16.6%  {background-color:red; left:200px; top:0px;object-position: 0% 0%;}
+	33.26%  {background-color:red; left:400px; top:0px;object-position: 0% 0%;}
+	49.86%  {background-color:red; left:600px; top:0px;}
+	66.46%  {background-color:red; left:800px; top:0px;}
+	83.06%  {background-color:red; left:1000px; top:0px;}
+	100%  {background-color:red; left:1200px; top:0px;}
+
+
+
+}
+
+ </style>
+
+	<div class="container">
+    <br>
+
+
+			{% for i in obj %}
+
+
+				{% if i.DocketId == data %}
+				<div class="alert alert-primary data" role="alert">
+					<h1>DocketId: {{i.DocketId}}</h1>
+					<h1>Docket Status:{{ i.DocketStatus }}</h1>
+					<h1>Docket Text:{{ i.EntryText }}</h1>
+
+				</div>
+
+				{% endif %}
+
+
+
+
+
+			{% endfor %}
+
+    </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<ul>
+
+<h4>Docket States:</h4>
+
+<li>Shipment_Pickup_From_Origin</li>
+<li>Received_At_Origin_Warehouse</li>
+<li>In_Transit</li>
+<li>Received_At_Destination_WareHouse</li>
+<li>Out_For_Delivery</li>
+<li>Delivered</li>
+
+</ul>
+
+
+
+
+
+{% endblock %}
